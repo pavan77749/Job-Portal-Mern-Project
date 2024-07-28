@@ -1,10 +1,29 @@
 import './App.css'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Login from './components/auth/Login'
+import Register from './components/auth/Register'
+import Home from './components/Home'
+
+
+const appRouter = createBrowserRouter([
+  {
+    path:'/',
+    element:<Home/>
+  },
+  {path:'/login',
+    element:<Login/>
+  },
+  {path:'/register',
+    element:<Register/>
+  },
+
+])
 
 function App() {
 
   return (
     <>
-    <h1 className='text-red-500'>Lets build Job Portal</h1>
+    <RouterProvider router={appRouter}></RouterProvider>
     </>
   )
 }
