@@ -6,26 +6,25 @@ import { Button } from "../ui/button";
 import { LogOut, User2 } from "lucide-react";
 
 const Navbar = () => {
-    const user = false
+    const user = false;
   return (
-    <div className="bg-white">
-      <div className="flex items-center justify-between mx-auto max-w-7xl h-16">
+    <div className="bg-white bg-opacity-10 backdrop-blur-lg shadow-md fixed w-full z-50 top-0 ">
+      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4">
         <div>
           <h1 className="text-2xl font-bold">
             Job <span className="text-[#0167ff]">Dekho</span>
           </h1>
         </div>
         <div className="flex items-center gap-12">
-          <ul className="flex font-medium items-center gap-5">
-            <li>Home</li>
-            <li>Jobs</li>
-            <li>Browse</li>
+          <ul className="flex font-medium items-center gap-5 cursor-pointer text-black">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/jobs">Jobs</Link></li>
+            <li><Link to="/browse">Browse</Link></li>
           </ul>
           {
             !user ? (
                 <div className="flex items-center gap-2">
                     <Link to="/login"><Button variant="outline">Login</Button></Link>
-              
                     <Link to="/register"><Button className="bg-[#0167ff] hover:bg-[#10356c]">Register</Button></Link>
                 </div>
             ):(
