@@ -13,6 +13,7 @@ const Herosection = () => {
           Search, Apply & <br /> Get Your{" "}
           <span className="text-[#0167ff]">Dream Jobs</span>
         </h1>
+        <p>"Find your dream job quickly and easily with Job Dekho today!"</p>
       </div>
       <div className="flex w-[40%] shadow-lg border border-gray-200 pl-3 rounded-full items-center gap-4 mx-auto ">
         <input

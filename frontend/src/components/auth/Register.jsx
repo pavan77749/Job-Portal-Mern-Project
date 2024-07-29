@@ -60,7 +60,7 @@ const Register = () => {
     }
   };
   return (
-    <div>
+    <div className="mt-24">
       <Navbar />
       <div className="flex justify-center items-center max-w-7xl mx-auto">
         <form

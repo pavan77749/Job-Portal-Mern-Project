@@ -9,8 +9,9 @@ import axios from "axios";
 import { toast } from "sonner";
 import { USER_API_END_POINT } from "@/utils/constant";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "@/redux/authSlice";
+import { setAuthUser, setLoading } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
+
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -36,6 +37,7 @@ const Login = () => {
         });
         console.log(res.data.success)
         if (res.data.success) {
+            dispatch(setAuthUser(res.data.user))
             navigate("/");
             toast.success(res.data.message);
         }
@@ -50,7 +52,7 @@ const Login = () => {
  
 
   return (
-    <div>
+    <div className="mt-24">
       <Navbar />
       <div className="flex justify-center items-center max-w-7xl mx-auto">
         <form
