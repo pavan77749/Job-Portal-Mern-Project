@@ -10,10 +10,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useSelector } from "react-redux";
+import useGetCompanyById from "@/hooks/useGetCompanyById";
 
 
 const CompanySetup = () => {
+  const params = useParams();
   const navigate = useNavigate();
+  useGetCompanyById(params.id)
 
   const [input, setInput] = useState({
     name: "",
@@ -33,7 +36,7 @@ const CompanySetup = () => {
   };
   const [loading, setLoading] = useState(false);
 
-  const params = useParams();
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
